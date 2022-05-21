@@ -24,7 +24,7 @@ nav {
   height: 27px;
   flex-grow: 0;
   margin: 0 4px 0 0;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
@@ -53,7 +53,7 @@ nav {
   width: 337px;
   height: 27px;
   margin: 117px 18px 10px 20px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
@@ -68,7 +68,7 @@ nav {
   width: 137px;
   height: 16px;
   margin: 10px 4px 86px 20px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -92,7 +92,7 @@ nav {
   border-radius: 30px;
   background-color: #67a16e;
   flex-grow: 0;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 17px;
   font-weight: 400;
   font-stretch: normal;
@@ -109,7 +109,7 @@ nav {
   width: 337px;
   height: 27px;
   margin: 30px 18px 10px 20px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
@@ -121,36 +121,35 @@ nav {
 }
 
 .Home-Card {
-  width: 335px;
   height: 560px;
-  margin: 10px 20px 58px;
-  padding: 0 0 21px;
+  margin: 10px 20px 20px;
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 #00000040;
   background-color: #fff;
 }
 
 .Home-Card-Image {
-  width: 335px;
-  height: 312px;
+  height: 310px;
   margin: 0 0 20px;
-  padding: 248px 19px 20px;
+  padding: 240px 20px 20px 20px;
+  border-radius: 5px 5px 0 0;
   background-image: linear-gradient(
-    to bottom,
-    #fff0 0%,
-    #fff0 50%,
-    #0000007d 85%,
-    #000 100%
-  ), url('/../../static/img/IMG_0493.jpeg');
+      to bottom,
+      #fff0 0%,
+      #fff0 50%,
+      #0000007d 85%,
+      #000 100%
+    ),
+    url("/../../static/img/IMG_0493.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .Home-Card-Image > span {
-    width: 297px;
+  width: 297px;
   height: 44px;
   flex-grow: 0;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   font-stretch: normal;
@@ -174,7 +173,7 @@ nav {
   border-radius: 30px;
   background-color: #c1d5c3;
   flex-grow: 0;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
@@ -194,4 +193,56 @@ nav {
   opacity: 0.8;
   border: solid 1px #000000f3;
   background-color: #fff;
+}
+
+/* plant identity template */
+
+.Match-Card {
+  height: 511px;
+  margin: 30px 20px 20px 20px;
+  padding: 0 0 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 #00000040;
+  background-color: #fff;
+}
+
+.Match-Card-Button {
+  /* width: 286px; */
+  height: 40px;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 20px 0 20px;
+  border-radius: 30px;
+  background-color: #67a16e;
+  font-family: "Open Sans";
+  font-size: 15px;
+  letter-spacing: 0.45px;
+  color: #fff;
+}
+
+.Match-Card-Image {
+  /* width: 335px; */
+  height: 310px;
+  margin: 0 0 20px 0;
+  padding: 255px 20px 20px 20px;
+  border-radius: 5px 5px 0 0;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      to bottom,
+      #fff0 0%,
+      #fff0 50%,
+      #0000007d 85%,
+      #000 100%
+    ),
+    url("/../../static/img/IMG_0505.jpeg");
+}
+
+.Match-Card-Image > span {
+  font-family: 'Open Sans';
+  font-size: 24px;
+  color: #fff;
 }

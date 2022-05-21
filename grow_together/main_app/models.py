@@ -26,7 +26,7 @@ class UserPlant(models.Model):
    plant=models.CharField(max_length=100)
    plant_match= models.ManyToManyField(Plant)
    User.id= models.ForeignKey(User, on_delete=models.CASCADE)
-   Plant.id = models.ForeignKey(Photo, )
+#    Plant.id = models.ForeignKey(Photo, )
 
    def __str__(self):
        return self.custom_name
