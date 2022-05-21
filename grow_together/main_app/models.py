@@ -19,6 +19,7 @@ class Plant(models.Model):
         return self.light
         return self.maintenance
 
+
 class UserPlant(models.Model):
    custom_name= models.CharField(max_length=100)
    created_at = models.DateTimeField
@@ -34,4 +35,5 @@ class UserPlant(models.Model):
        return self.image
        return self.plant
        return self.plant_match
+
 
