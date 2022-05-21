@@ -2,36 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* main nav bar */
+/* Top Navigation Bar */
 
 nav {
   width: 375px;
-  height: 46px;
-  margin: 45px 0 30px 0;
-  padding: 10px 20px 9px 28px;
+  height: 50px;
+  margin: 20px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: #e9f0e8;
 }
 
-.Group-252 {
-  width: 327px;
-  height: 27px;
-  text-align: center;
+.nav-elements {
+  width: 335px;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.Grow-Together {
-  width: 149px;
-  height: 27px;
-  flex-grow: 0;
-  margin: 0 4px 0 0;
+nav .dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin: 5px auto;
+  /* -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; */
+  background-color: #053f0c;
+}
+
+.nav-menu {
+  position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #f3f7f3;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        /* box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05); */
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+nav .title {
   font-family: "Open Sans";
   font-size: 20px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
   color: #507654;
 }
 
@@ -245,11 +270,11 @@ nav {
   color: #fff;
 }
 
-.Matched-Plants {
+/* .Matched-Plants {
   margin: 30px 20px 20px 20px;
 }
 
 .Matched-Plants > Title {
   font-family: 'Open Sans';
   font-size: 15px;
-}
+} */
