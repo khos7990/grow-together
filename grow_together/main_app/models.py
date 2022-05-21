@@ -18,3 +18,10 @@ class Plant(models.Model):
         return self.water_use
         return self.light
         return self.maintenance
+
+class Photo (models.Model):
+    url = models.CharField(max_length=200)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for: {self.user_id} @{self.url}"
