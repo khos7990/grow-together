@@ -195,10 +195,10 @@ nav {
   background-color: #fff;
 }
 
-/* plant identity template */
+/* Match Template */
 
 .Match-Card {
-  height: 511px;
+  height: 510px;
   margin: 30px 20px 20px 20px;
   padding: 0 0 30px;
   border-radius: 5px;
@@ -206,27 +206,7 @@ nav {
   background-color: #fff;
 }
 
-.Match-Card-Button {
-  /* width: 286px; */
-  height: 40px;
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 30px 20px 0 20px;
-  border-radius: 30px;
-  background-color: #67a16e;
-  font-family: "Open Sans";
-  font-size: 15px;
-  letter-spacing: 0.45px;
-  color: #fff;
-}
-
 .Match-Card-Image {
-  /* width: 335px; */
-  height: 310px;
-  margin: 0 0 20px 0;
   padding: 255px 20px 20px 20px;
   border-radius: 5px 5px 0 0;
   background-size: cover;
@@ -234,15 +214,42 @@ nav {
   background-image: linear-gradient(
       to bottom,
       #fff0 0%,
-      #fff0 50%,
-      #0000007d 85%,
+      #fff0 41%,
+      #0000007d 79%,
       #000 100%
     ),
     url("/../../static/img/IMG_0505.jpeg");
 }
 
 .Match-Card-Image > span {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 24px;
   color: #fff;
+}
+
+.Match-Card-Button {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 20px 0 20px;
+  border-radius: 30px;
+  background-color: #67a16e;
+}
+
+.Match-Card-Button > span {
+  font-family: "Open Sans";
+  font-size: 15px;
+  letter-spacing: 0.45px;
+  color: #fff;
+}
+
+.Matched-Plants {
+  margin: 30px 20px 20px 20px;
+}
+
+.Matched-Plants > Title {
+  font-family: 'Open Sans';
+  font-size: 15px;
 }
