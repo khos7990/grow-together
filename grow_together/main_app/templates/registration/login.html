@@ -1,6 +1,30 @@
-<h1>Log In</h1>
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" class="btn" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="body-login">
+  <nav>
+    <div class="Group-252">
+      <span class="Grow-Together">
+        Grow Together
+      </span>
+    </div>
+  </nav>
+
+<div>
+  <p class="Sign-in-to-grow-together">
+    Sign in to grow together
+  </p>
+  <p class="Dont-have-an-account">
+    Don't have an account?
+  </p>
+</div>
+
+  <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <input type="submit" class="btn" id="sign_in" value="Sign in" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+</div>
+{% endblock %}
