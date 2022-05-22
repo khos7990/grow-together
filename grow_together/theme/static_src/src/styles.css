@@ -161,7 +161,7 @@ nav .title {
   background-color: #fff;
 }
 
-.Home-Card-Image {
+.home-card-image {
   height: 310px;
   margin: 0 0 20px;
   padding: 240px 20px 20px 20px;
@@ -178,19 +178,37 @@ nav .title {
   background-position: center;
 }
 
-.Home-Card-Image > span {
-  width: 297px;
-  height: 44px;
-  flex-grow: 0;
+.home-card-image > span {
   font-family: "Open Sans";
   font-size: 16px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
   color: #fff;
+}
+
+.add-photo {
+  height: 150px;
+  margin: 20px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 35px 73px 30px; */
+  border: dashed 1px black;
+}
+
+.add-photo .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-photo .form-field {
+  margin-bottom: 10px;
+}
+
+.add-photo  .upload-link {
+  font-family: 'Open Sans';
+  font-size: 12px;
+  text-decoration: underline;
 }
 
 .Home-Card-Button {
@@ -215,17 +233,6 @@ nav .title {
   letter-spacing: 0.45px;
   text-align: center;
   color: #fff;
-}
-
-.Home-Card-Add-Photo {
-  width: 297px;
-  height: 147px;
-  flex-grow: 0;
-  margin: 20px 19px;
-  padding: 35px 73px 30px;
-  opacity: 0.8;
-  border: solid 1px #000000f3;
-  background-color: #fff;
 }
 
 /* Match Template */

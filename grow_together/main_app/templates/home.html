@@ -7,39 +7,36 @@
     Welcome to Grow Together
 </p>
   
-
 <div class="Home-Card">
-    <div class="Home-Card-Image"> 
+    <div class="home-card-image"> 
         <span>
             Looking for a plant to match yours? </br> 
             Take a photo and find a match!
         </span>
     </div>
-    <div class="Home-Card-Add-Photo"></div>
+    <div class="add-photo">
+        {% if user.is_authenticated %}
+        <form action="{% url 'add_photo' user.id %}" method="POST">
+            {% csrf_token %}
+            <div class="inputs">
+            <input class="form-field" type="url" name="image">
+            <input class="upload-link" type="submit" value="Upload Image">
+            </div>
+        </form>  
+        {% endif %} 
+    </div>
     <div class="Home-Card-Button"> Next</div>
 </div>
 
-<!-- <script>
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-  
-    hamburger.addEventListener("click", mobileMenu);
-  
-    function mobileMenu() {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    }
-  
-    const navLink = document.querySelectorAll(".nav-link");
-  
-    navLink.forEach(n => n.addEventListener("click", closeMenu));
-  
-    function closeMenu() {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-  }
-  
-  </script> -->
+
+    
+    <h1> BestMatch: </h1> <h1>{{result.bestMatch}} </h1>
+    {% for item in result.results %}
+    <h3> Score: </h3>   <h4> {{item.score}}</h4>
+    <h3> Scientific Name: </h3>   <h4> {{item.species.scientificNameWithoutAuthor}}</h4>
+    <h3> CommonNames: </h3>   <h4>{{item.species.commonNames}}}</h4>
+    </br>
+    {% endfor %}
 
 {% endblock %}
 
