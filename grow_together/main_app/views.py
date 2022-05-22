@@ -2,13 +2,13 @@ import re
 from urllib import response
 import django
 import requests
-from .models import Plant, Photo
+from .models import Plant
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 import uuid
-import boto3
+#import boto3
 import urllib.parse
 from pprint import pprint
 import json
