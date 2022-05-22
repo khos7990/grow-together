@@ -3,27 +3,25 @@
 
 {% block main %}
 
-<!-- <h1> API PAGE</h1> -->
+<h2 class="sub-title">
+    Plant Details
+</h2>
 
-<!-- <form action="{% url 'add_photo' user.id %}" method="POST">
-{% csrf_token %}
-<input type="url" name="image">
-
-<input type="submit" value="upload-image"> -->
-<!-- </form> -->
-
-<h1> BestMatch: </h1> 
-<!-- <h1>{{result}} </h1> -->
-<h1>{{result.bestMatch}}</h1>
-<h1>{{result}}</h1>
-<h2></h2>
-<!-- {% for item in result.results %}
-<h3> Score: </h3>   <h4> {{item.score}}</h4>
-<h3> Scientific Name: </h3>   <h4> {{item.species.scientificNameWithoutAuthor}}</h4>
-<h3> CommonNames: </h3>   <h4>{{item.species.commonNames}}}</h4>
-</br>
-{% endfor %} -->
-
+<div class="match-card">
+    <div class="image">
+        <span> {{ result.bestMatch }} </span>
+    </div>
+    <div class="plant-details">
+        <h3>Care & Conditions</h3>
+        <p>Common Name: {{ result.results.0.species.commonNames.1 }}</p>
+        <p>Score: {{ result.results.0.score }}</p>
+    </div>
+    <div class="button">
+        <a href="#">
+            <span> Start Matching </span>
+        </a>
+    </div>
+</div>
 
 {% endblock %}
 

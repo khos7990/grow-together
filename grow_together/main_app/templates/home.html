@@ -3,12 +3,12 @@
 
 {% block main %}
 
-<p class="Welcome-to-Grow-Together">
+<p class="sub-title">
     Welcome to Grow Together
 </p>
   
-<div class="Home-Card">
-    <div class="home-card-image"> 
+<div class="home-card">
+    <div class="image"> 
         <span>
             Looking for a plant to match yours? </br> 
             Take a photo and find a match!
@@ -25,18 +25,14 @@
         </form>  
         {% endif %} 
     </div>
-    <div class="Home-Card-Button"> Next</div>
+    <div class="button"> 
+        <a href="#">
+            <span>
+                Next
+            </span>
+        </a>
+    </div>
 </div>
-
-
-    
-    <h1> BestMatch: </h1> <h1>{{result.bestMatch}} </h1>
-    {% for item in result.results %}
-    <h3> Score: </h3>   <h4> {{item.score}}</h4>
-    <h3> Scientific Name: </h3>   <h4> {{item.species.scientificNameWithoutAuthor}}</h4>
-    <h3> CommonNames: </h3>   <h4>{{item.species.commonNames}}}</h4>
-    </br>
-    {% endfor %}
 
 {% endblock %}
 
