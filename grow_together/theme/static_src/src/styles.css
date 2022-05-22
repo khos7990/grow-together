@@ -12,9 +12,7 @@
 
 body {
   font-family: 'Open Sans';
-  /* not pushing to branch?? */
 }
-
 
 /* Top Navigation Bar */
 
@@ -90,20 +88,14 @@ nav .title {
   margin: 20px 20px 20px 20px;
   border-radius: 30px;
   background-color: var(--medium-green);
-}
-
-.button span {
   font-size: 15px;
   letter-spacing: 0.45px;
   color: #fff;
 }
 
-/* login page */
+/* Login Page */
 
 .body-login {
-  width: 375px;
-  height: 812px;
-  flex-grow: 0;
   background-image: linear-gradient(
     to bottom,
     #9ed5bb 0%,
@@ -112,56 +104,17 @@ nav .title {
   );
 }
 
-.Sign-in-to-grow-together {
-  width: 337px;
-  height: 27px;
-  margin: 117px 18px 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: justify;
-  color: #333;
-}
-
-.Dont-have-an-account {
-  width: 137px;
-  height: 16px;
-  margin: 10px 4px 86px 20px;
+.no-account {
+  margin: 10px 0 10px 0;
   font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.36px;
-  text-align: justify;
-  color: #484848;
+  letter-spacing: 0.45px;
 }
 
-#sign_in {
-  width: 335px;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px;
-  padding: 10px 121px;
-  border-radius: 30px;
-  background-color: #67a16e;
-  flex-grow: 0;
-  font-size: 17px;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.45px;
-  text-align: justify;
-  color: #fff;
+.Ishan > p {
+  margin: 0 0 0 20px;
+
 }
+
 
 /* Home Page */
 
@@ -221,7 +174,7 @@ nav .title {
   margin-bottom: 10px;
 }
 
-.home-card > .add-photo  .upload-link {
+.home-card > .add-photo p {
   font-size: 12px;
   text-decoration: underline;
 }
