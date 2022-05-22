@@ -3,20 +3,24 @@
 
 {% block main %}
 <div class="body-login">
-<div>
-  <p class="Sign-in-to-grow-together">
-    Sign in to grow together
-  </p>
-  <p class="Dont-have-an-account">
-    Don't have an account?
+<div class="sub-title">
+  <p>Log in to Grow Together</p>
+  <p class="no-account">
+    Don't have an account? <a href="{% url 'signup' %}" style="text-decoration:underline">Sign up</a>
   </p>
 </div>
 
   <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
-      {{ form.as_p }}
-    <input type="submit" class="btn" id="sign_in" value="Sign in" />
-    <input type="hidden" name="next" value="{{ next }}" />
+      <div class="Ishan">
+      <p>{{ form.username }}</p>
+      <p>{{ form.password }}</p>
+      </div>
+
+      <div class="button"> 
+        <input type="submit" value="Log In">
+        <input type="hidden" name="next" value="{{ next }}" />
+      </div>
   </form>
 </div>
 {% endblock %}
