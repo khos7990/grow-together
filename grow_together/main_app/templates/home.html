@@ -2,28 +2,36 @@
 {% load static %}
 
 {% block main %}
-<nav>
-    <div class="Group-252">
-      <span class="Grow-Together">
-        Grow Together
-      </span>
-    </div>
-</nav>
 
-<p class="Welcome-to-Grow-Together">
+<p class="sub-title">
     Welcome to Grow Together
 </p>
   
-
-<div class="Home-Card">
-    <div class="Home-Card-Image"> 
+<div class="home-card">
+    <div class="image"> 
         <span>
             Looking for a plant to match yours? </br> 
             Take a photo and find a match!
         </span>
     </div>
-    <div class="Home-Card-Add-Photo"></div>
-    <div class="Home-Card-Button"> Next</div>
+    <div class="add-photo">
+        {% if user.is_authenticated %}
+        <form action="{% url 'add_photo' user.id %}" method="POST">
+            {% csrf_token %}
+            <div class="inputs">
+            <input class="form-field" type="url" name="image">
+            <input class="upload-link" type="submit" value="Upload Image">
+            </div>
+        </form>  
+        {% endif %} 
+    </div>
+    <div class="button"> 
+        <a href="#">
+            <span>
+                Next
+            </span>
+        </a>
+    </div>
 </div>
 
 {% endblock %}

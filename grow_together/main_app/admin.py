@@ -4,4 +4,4 @@ from .models import Plant
 
 # Register your models here.
 admin.site.register(Plant)
-#admin.site.register(Photo)
+# admin.site.register(Photo)
