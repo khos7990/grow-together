@@ -1,0 +1,15 @@
+
+
+{% for photo in user.photo_set.all %}
+<img src="{{photo.url}}">
+<h1> BestMatch: </h1> <h1>{{result.bestMatch}} </h1>
+{% empty %}
+<div><h1>No Photos Uploaded</h1></div>
+{% endfor %}
+
+<form action="{% url 'upload' user.id %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+</form>
