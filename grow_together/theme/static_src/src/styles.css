@@ -10,6 +10,11 @@
   --dark-green: #053f0c;
 }
 
+body {
+  font-family: 'Open Sans';
+  /* not pushing to branch?? */
+}
+
 
 /* Top Navigation Bar */
 
@@ -61,18 +66,15 @@ nav .dot {
 
 .nav-menu p {
   margin: 10px 20px;
-  font-family: 'Open Sans';
   font-size: 20px;
   color: var(--medium-dark-green);
 }
 
 .nav-item {
   margin: 10px 20px 0;
-  font-family: 'Open Sans';
 }
 
 nav .title {
-  font-family: "Open Sans";
   font-size: 20px;
   color: var(--medium-dark-green);
 }
@@ -91,7 +93,6 @@ nav .title {
 }
 
 .button span {
-  font-family: "Open Sans";
   font-size: 15px;
   letter-spacing: 0.45px;
   color: #fff;
@@ -115,7 +116,6 @@ nav .title {
   width: 337px;
   height: 27px;
   margin: 117px 18px 10px 20px;
-  font-family: "Open Sans";
   font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
@@ -130,7 +130,6 @@ nav .title {
   width: 137px;
   height: 16px;
   margin: 10px 4px 86px 20px;
-  font-family: "Open Sans";
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
@@ -154,7 +153,6 @@ nav .title {
   border-radius: 30px;
   background-color: #67a16e;
   flex-grow: 0;
-  font-family: "Open Sans";
   font-size: 17px;
   font-weight: 400;
   font-stretch: normal;
@@ -169,7 +167,6 @@ nav .title {
 
 .sub-title {
   margin-left: 20px;
-  font-family: "Open Sans";
   font-size: 20px;
 }
 
@@ -199,7 +196,6 @@ nav .title {
 }
 
 .home-card > .image > span {
-  font-family: "Open Sans";
   font-size: 16px;
   color: #fff;
 }
@@ -226,7 +222,6 @@ nav .title {
 }
 
 .home-card > .add-photo  .upload-link {
-  font-family: 'Open Sans';
   font-size: 12px;
   text-decoration: underline;
 }
@@ -258,7 +253,6 @@ nav .title {
 }
 
 .match-card > .image > span {
-  font-family: "Open Sans";
   font-size: 24px;
   color: #fff;
 }
@@ -266,5 +260,4 @@ nav .title {
 .plant-details {
   height: 150px;
   margin: 20px 20px 20px 20px;
-  font-family: 'Open Sans';
 }
