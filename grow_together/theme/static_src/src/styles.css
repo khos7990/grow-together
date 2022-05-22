@@ -30,28 +30,36 @@ nav .dot {
   height: 5px;
   border-radius: 50%;
   margin: 5px auto;
-  /* -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; */
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: #053f0c;
 }
 
 .nav-menu {
   position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #f3f7f3;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        /* box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05); */
+  left: -100%;
+  top: 5rem;
+  flex-direction: column;
+  background-color: #f3f7f3;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
 }
 
 .nav-menu.active {
   left: 0;
+}
+
+.nav-menu p {
+  margin: 10px 20px;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  color: #507654;
+}
+
+.nav-item {
+  margin: 10px 20px 0;
+  font-family: 'Open Sans';
 }
 
 nav .title {
