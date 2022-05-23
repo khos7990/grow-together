@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
 }
 
 /* Top Navigation Bar */
@@ -19,7 +19,7 @@ body {
 nav {
   width: 375px;
   height: 50px;
-  margin: 20px 0 30px 0;
+  margin: 0 0 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@ nav {
   height: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
 }
 
@@ -62,7 +62,7 @@ nav .dot {
   left: 0;
 }
 
-.nav-menu p {
+.main-title {
   margin: 10px 20px;
   font-size: 20px;
   color: var(--medium-dark-green);
@@ -72,7 +72,8 @@ nav .dot {
   margin: 10px 20px 0;
 }
 
-nav .title {
+.secondary-title {
+  margin: 10px 0 0 20px;
   font-size: 20px;
   color: var(--medium-dark-green);
 }
@@ -95,13 +96,9 @@ nav .title {
 
 /* Login Page */
 
-.body-login {
-  background-image: linear-gradient(
-    to bottom,
-    #9ed5bb 0%,
-    #eaf5e9 48%,
-    rgba(234, 245, 233, 0) 100%
-  );
+.login-title {
+  margin: 150px 0 0 20px;
+  font-size: 20px;
 }
 
 .no-account {
@@ -110,11 +107,29 @@ nav .title {
   letter-spacing: 0.45px;
 }
 
-.Ishan > p {
-  margin: 0 0 0 20px;
-
+.user-input-fields {
+  margin: 60px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
+.user-input-fields #id_username {
+  margin: 0 0 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px black;
+}
+
+.user-input-fields #id_password {
+  margin: 0 0 30px 0;
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px black;
+}
+
+/* .user-input-fields > input:focus {
+  border: 3px solid orange;
+} */
 
 /* Home Page */
 

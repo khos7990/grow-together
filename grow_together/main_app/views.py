@@ -1,17 +1,25 @@
 import re
 from urllib import response
 import django
+from django import forms
 import requests
 from .models import Plant, Photo
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, forms
 import uuid
 import boto3
 import urllib.parse
 from pprint import pprint
 import json
+
+# class UserCreationForm(forms.ModelForm):
+#     def __init__(self, *args, **kwargs):
+#         super(UserCreationForm, self).__init__(*args, **kwargs)
+#         self.fields['username'].label = ""
+#         self.fields['password'].label = ""
+
 
 # testing amazon s3
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
@@ -48,7 +56,7 @@ def test(request, user_id):
         encoded = urllib.parse.quote_plus(form)
         url = 'https://my-api.plantnet.org/v2/identify/all?api-key=' + api_key + '&images=' + encoded + '&' + organ_1
         result = requests.get(url)
-        data = (result.json)
+        data = (result.json())
         return render(request, 'api.html', {'result': data})
     else:
         return render(request,'api.html')
