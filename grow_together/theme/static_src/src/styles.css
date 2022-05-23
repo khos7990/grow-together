@@ -109,21 +109,14 @@ nav .main-title {
   letter-spacing: 0.45px;
 }
 
-.user-input-fields {
+.login-input-fields {
   margin: 60px 20px 0 20px;
   display: flex;
   flex-direction: column;
 }
 
-.user-input-fields #id_username {
+.login-input-fields > input {
   margin: 0 0 10px 0;
-  background: transparent;
-  border: none;
-  border-bottom: solid 1px black;
-}
-
-.user-input-fields #id_password {
-  margin: 0 0 30px 0;
   background: transparent;
   border: none;
   border-bottom: solid 1px black;
@@ -132,6 +125,21 @@ nav .main-title {
 /* .user-input-fields > input:focus {
   border: 3px solid orange;
 } */
+
+/* Sign Up Page */
+
+.signup-input-fields {
+  margin: 60px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-input-fields > input {
+  margin: 0 0 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px black;
+}
 
 /* Home Page */
 
