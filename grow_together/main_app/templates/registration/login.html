@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block additional_styles %}
+  <style>
+    body {
+    height: 100vh;
+    background-image: linear-gradient(
+    to bottom,
+    #9ed5bb 0%,
+    #eaf5e9 48%,
+    rgba(234, 245, 233, 0) 100%
+  );
+    }
+  </style>
+{% endblock %}
+
 {% block main %}
-<div class="body-login">
-<div class="sub-title">
+<div class="login-title">
   <p>Log in to Grow Together</p>
   <p class="no-account">
     Don't have an account? <a href="{% url 'signup' %}" style="text-decoration:underline">Sign up</a>
@@ -12,9 +25,9 @@
 
   <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
-      <div class="Ishan">
-      <p>{{ form.username }}</p>
-      <p>{{ form.password }}</p>
+      <div class="user-input-fields">
+      {{ form.username }}
+      {{ form.password }}
       </div>
 
       <div class="button"> 
@@ -22,5 +35,4 @@
         <input type="hidden" name="next" value="{{ next }}" />
       </div>
   </form>
-</div>
 {% endblock %}

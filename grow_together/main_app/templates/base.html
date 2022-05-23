@@ -24,10 +24,14 @@
     <title>Grow Together</title>
   </head>
   <body>
+
+    {% block additional_styles %}
+    {% endblock %}
+
     <nav>
       <div class="nav-elements">
         <ul class="nav-menu">
-          <p>Grow Together</p>
+          <h2 class="secondary-title">Grow Together</h2>
 
           {% if user.is_authenticated %}
           <li class="nav-item">
@@ -56,7 +60,7 @@
           <span class="dot"></span>
           <span class="dot"></span>
         </div>
-        <span class="title"> Grow Together </span>
+        <h1 class="main-title"> Grow Together </h1>
       </div>
     </nav>
 
