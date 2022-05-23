@@ -70,13 +70,21 @@ def upload(request, user_id):
                 encoded = urllib.parse.quote_plus(url)
                 api_match = 'https://my-api.plantnet.org/v2/identify/all?api-key=' + api_key + '&images=' + encoded + '&' + organ_1
                 result = requests.get(api_match)
-                data = (result.json)
+                data = (result.json())
                 photo = Photo(url=url, user_id=user_id)
                 photo.save()
-                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data})
+                match = data['bestMatch']
+                first_word = match.split()[:1]
+                p = Plant.objects.all().filter(scientific_name__contains=first_word[0])
+                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p})
             except:
                 print('An error occurred uploading file to S3')
     return render(request, 'uploadaws.html', {user_id: user_id})
+
+
+
+    
+    
 
 
 
