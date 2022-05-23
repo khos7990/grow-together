@@ -86,6 +86,19 @@
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
+
+    // add placeholder text to login page form fields
+    if (document.querySelector(".login-input-fields")) {
+      document.getElementById("id_username").setAttribute("placeholder", "Username"); 
+      document.getElementById("id_password").setAttribute("placeholder", "Password");
+    }
+    
+    // add placeholder text to sign up page form fields
+    if (document.querySelector(".signup-input-fields")){
+      document.getElementById("id_username").setAttribute("placeholder", "Username"); 
+      document.getElementById("id_password1").setAttribute("placeholder", "Enter Password"); 
+      document.getElementById("id_password2").setAttribute("placeholder", "Confirm Password"); 
+    }
     </script>
   </body>
 </html>
