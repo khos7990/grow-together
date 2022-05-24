@@ -23,11 +23,8 @@ class Plant(models.Model):
 class UserPlant(models.Model):
    custom_name= models.CharField(max_length=100)
    created_at = models.DateTimeField
-   image= models.ImageField
-   plant=models.CharField(max_length=100)
-   plant_match= models.ManyToManyField(Plant)
-   User.id= models.ForeignKey(User, on_delete=models.CASCADE)
-#    Plant.id = models.ForeignKey(Photo, )
+   user= models.ForeignKey(User, on_delete=models.CASCADE, default= 1)
+#
 
    def __str__(self):
        return self.custom_name
@@ -35,5 +32,14 @@ class UserPlant(models.Model):
        return self.image
        return self.plant
        return self.plant_match
+
+
+class Photo (models.Model):
+    url = models.CharField(max_length=200)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    plant = models.ForeignKey(Plant, on_delete=models.CASCADE, null=True )
+
+    def __str__(self):
+        return f"Photo for: {self.user_id} @{self.url}"
 
 

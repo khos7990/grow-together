@@ -1,13 +1,44 @@
-<h1>Sign Up</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block additional_styles %}
+  <style>
+    body {
+    height: 100vh;
+    background-image: linear-gradient(
+    to bottom,
+    #9ed5bb 0%,
+    #eaf5e9 48%,
+    #eaf5e900 100%
+  );
+    }
+  </style>
+{% endblock %}
+
+{% block main %}
 
 {% if error_message %}
 <p> {{error_message}}</p>
 {% endif %}
 
+  <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %} 
+    <div class="signup-input-wrapper">
+      {{ form.username|attr:"placeholder:Username"|add_class:"bg-transparent border-x-0 border-t-0 mb-2.5 border-[#053f0c] focus:ring-0" }}
+      {{ form.password1|attr:"placeholder:Enter Password"|add_class:"bg-transparent border-x-0 border-t-0 mb-2.5 border-[#053f0c] focus:ring-0" }}
+      {{ form.password2|attr:"placeholder:Confirm Password"|add_class:"bg-transparent border-x-0 border-t-0 mb-2.5 border-[#053f0c] focus:ring-0" }}
+    </div>
 
+    <div class="button"> 
+      <input type="submit" value="Sign Up">
+    </div>
+  </form>
 
-<form method="post" action="{% url 'signup' %}">
-  {% csrf_token %} 
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="signup" />
-</form>
+<div class="signup-instructions">
+  <p> Your username should be made up of letters, digits and @/./+/-/_ only. </p>
+  <p> Your password must contain at least 8 characters. </p>  
+  <p> Your password can't be entirely numeric. </p>
+</div>
+
+{% endblock %}

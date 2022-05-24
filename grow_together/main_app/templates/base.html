@@ -8,11 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CSS and Custom CSS -->
     {% tailwind_css %}
-    <!-- Tailwind Flowbite -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://unpkg.com/flowbite@1.4.6/dist/flowbite.min.css"
-    /> -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,64 +19,72 @@
     <title>Grow Together</title>
   </head>
   <body>
+    
+    {% block additional_styles %}
+    {% endblock %}
+    
     <nav>
       <div class="nav-elements">
         <ul class="nav-menu">
-          <p>Grow Together</p>
-
+          <h2 class="secondary-title">Grow Together</h2>
+          
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">My Plants</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-          </li>
-          {% endif %}
-        </ul>
-        <div class="hamburger">
-          <span class="dot"></span>
-          <span class="dot"></span>
+            <a class="nav-link" href="{% url 'home' %}">Home
+              <!-- <img class="icon" src="../../theme/static/img/logo.svg" alt=""> -->
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Plants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            </li>
+            {% endif %}
+          </ul>
+          <div class="hamburger">
+            <span class="dot"></span>
+            <span class="dot"></span>
           <span class="dot"></span>
         </div>
-        <span class="title"> Grow Together </span>
+        <h1 class="main-title"> Grow Together </h1>
+        <div class="logo"></div>
       </div>
     </nav>
-
+    
     <main>{% block main %} {% endblock %}</main>
-
+    
     <!-- JS script for Burger Menu -->
     <script>
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
-
+      
       hamburger.addEventListener("click", mobileMenu);
-
+      
       function mobileMenu() {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
       }
-
+      
       const navLink = document.querySelectorAll(".nav-link");
-
+      
       navLink.forEach(n => n.addEventListener("click", closeMenu));
-
+      
       function closeMenu() {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
-    </script>
+      </script>
   </body>
-</html>
+  </html>
+  

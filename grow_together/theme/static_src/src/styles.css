@@ -10,13 +10,16 @@
   --dark-green: #053f0c;
 }
 
+body {
+  font-family: "Open Sans";
+}
 
 /* Top Navigation Bar */
 
 nav {
   width: 375px;
   height: 50px;
-  margin: 20px 0 30px 0;
+  margin: 0 0 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,8 +32,8 @@ nav {
   height: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
+  /* position: relative; */
 }
 
 nav .dot {
@@ -44,10 +47,31 @@ nav .dot {
   background-color: var(--dark-green);
 }
 
+nav .main-title {
+  /* fix flexbox thing */
+  position: absolute;
+  left: 48%;
+  transform: translate(-50%, 0);
+  font-size: 20px;
+  color: var(--medium-dark-green);
+}
+
+nav .logo {
+  height: 20px;
+  width: 20px;
+  /* fix flexbox - do not like absolute */
+  position: absolute;
+  left: 67%;
+  background-image: url("/../../static/img/logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .nav-menu {
   position: fixed;
   left: -100%;
-  top: 5rem;
+  top: 50px;
   flex-direction: column;
   background-color: var(--light-green);
   width: 100%;
@@ -59,20 +83,21 @@ nav .dot {
   left: 0;
 }
 
-.nav-menu p {
-  margin: 10px 20px;
-  font-family: 'Open Sans';
-  font-size: 20px;
-  color: var(--medium-dark-green);
-}
-
 .nav-item {
-  margin: 10px 20px 0;
-  font-family: 'Open Sans';
+  margin: 10px 0 0 20px;
 }
 
-nav .title {
-  font-family: "Open Sans";
+/* .icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("/../../static/img/logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+.secondary-title {
+  margin: 10px 0 0 20px;
   font-size: 20px;
   color: var(--medium-dark-green);
 }
@@ -88,88 +113,47 @@ nav .title {
   margin: 20px 20px 20px 20px;
   border-radius: 30px;
   background-color: var(--medium-green);
-}
-
-.button span {
-  font-family: "Open Sans";
   font-size: 15px;
   letter-spacing: 0.45px;
   color: #fff;
 }
 
-/* login page */
+/* Login Page */
 
-.body-login {
-  width: 375px;
-  height: 812px;
-  flex-grow: 0;
-  background-image: linear-gradient(
-    to bottom,
-    #9ed5bb 0%,
-    #eaf5e9 48%,
-    rgba(234, 245, 233, 0) 100%
-  );
-}
-
-.Sign-in-to-grow-together {
-  width: 337px;
-  height: 27px;
-  margin: 117px 18px 10px 20px;
-  font-family: "Open Sans";
+.login-title {
+  margin: 150px 0 0 20px;
   font-size: 20px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: justify;
-  color: #333;
 }
 
-.Dont-have-an-account {
-  width: 137px;
-  height: 16px;
-  margin: 10px 4px 86px 20px;
-  font-family: "Open Sans";
+.no-account {
+  margin: 10px 0 10px 0;
   font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.36px;
-  text-align: justify;
-  color: #484848;
+  letter-spacing: 0.45px;
 }
 
-#sign_in {
-  width: 335px;
-  height: 40px;
+.login-input-wrapper {
+  margin: 60px 20px 0 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px;
-  padding: 10px 121px;
-  border-radius: 30px;
-  background-color: #67a16e;
-  flex-grow: 0;
-  font-family: "Open Sans";
-  font-size: 17px;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.45px;
-  text-align: justify;
-  color: #fff;
+  flex-direction: column;
+}
+
+/* Sign Up Page */
+
+.signup-input-wrapper {
+  margin: 140px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-instructions {
+  margin: 30px 20px 0 20px;
+  font-size: 14px;
 }
 
 /* Home Page */
 
 .sub-title {
   margin-left: 20px;
-  font-family: "Open Sans";
   font-size: 20px;
 }
 
@@ -199,7 +183,6 @@ nav .title {
 }
 
 .home-card > .image > span {
-  font-family: "Open Sans";
   font-size: 16px;
   color: #fff;
 }
@@ -210,26 +193,21 @@ nav .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 35px 73px 30px; */
   border: dashed 1px black;
 }
 
-.home-card > .add-photo .inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+/* .home-card > .add-photo .inputs {
+  height: 100px;
+  width: 100px;
+  background-image: url('https://image.shutterstock.com/image-vector/photo-icon-vector-isolated-on-260nw-456059428.jpg');
+  background-position: center;
+  background-size: cover;
+} */
 
-.home-card > .add-photo .form-field {
-  margin-bottom: 10px;
-}
-
-.home-card > .add-photo  .upload-link {
-  font-family: 'Open Sans';
+/* .home-card > .add-photo p {
   font-size: 12px;
   text-decoration: underline;
-}
+} */
 
 /* Match Template */
 
@@ -247,18 +225,17 @@ nav .title {
   border-radius: 5px 5px 0 0;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to bottom,
       #fff0 0%,
-      #fff0 41%,
-      #0000007d 79%,
+      #fff0 50%,
+      #0000007d 85%,
       #000 100%
     ),
-    url("/../../static/img/IMG_0505.jpeg");
+    url("/../../static/img/IMG_0493.jpeg"); */
 }
 
 .match-card > .image > span {
-  font-family: "Open Sans";
   font-size: 24px;
   color: #fff;
 }
@@ -266,7 +243,6 @@ nav .title {
 .plant-details {
   height: 150px;
   margin: 20px 20px 20px 20px;
-  font-family: 'Open Sans';
 }
 
 .matches {
