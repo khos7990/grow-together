@@ -86,14 +86,14 @@ def upload(request, user_id):
                 return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p, 'photo': Uploadedphoto})
             except:
                 print('An error occurred uploading file to S3')
-    return render(request, 'uploadaws.html', {user_id: user_id})
+    return render(request, 'uploadaws.html')# {user_id: user_id})
 
 
 def myplants(request, user_id):
     user = User.objects.all().filter(id = user_id)
     photos = user[0].photo_set.all()
     
-    return render(request, 'myplants.html', {user_id: user_id, 'photos':photos})
+    return render(request, 'myplants.html') #{user_id: user_id, 'photos':photos})
 
 
     
