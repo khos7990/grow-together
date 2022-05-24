@@ -3,7 +3,7 @@ from urllib import response
 import django
 from django import forms
 import requests
-from .models import Plant, Photo
+from .models import Plant, Photo, UserPlant
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import login
@@ -73,18 +73,24 @@ def upload(request, user_id):
                 api_match = 'https://my-api.plantnet.org/v2/identify/all?api-key=' + api_key + '&images=' + encoded + '&' + organ_1
                 result = requests.get(api_match)
                 data = (result.json())
-                photo = Photo(url=url, user_id=user_id)
-                photo.save()
                 match = data['bestMatch']
                 first_word = match.split()[:1]
                 p = Plant.objects.all().filter(scientific_name__contains=first_word[0])
+                photo = Photo(url=url, user_id=user_id, plant= p[0])
+                photo.save()
                 user = User.objects.all().filter(id = user_id)
                 Uploadedphoto = user[0].photo_set.last()
                 return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p, 'photo': Uploadedphoto})
             except:
                 print('An error occurred uploading file to S3')
-    return render(request, 'Ishan.html', {user_id: user_id})
+    return render(request, 'uploadaws.html', {user_id: user_id})
 
+
+def myplants(request, user_id):
+    user = User.objects.all().filter(id = user_id)
+    photos = user[0].photo_set.all()
+    
+    return render(request, 'myplants.html', {user_id: user_id, 'photos':photos})
 
 
     
