@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block additional_styles %}
   <style>
@@ -19,15 +20,15 @@
 <div class="login-title">
   <p>Log in to Grow Together</p>
   <p class="no-account">
-    Don't have an account? <a href="{% url 'signup' %}" style="text-decoration:underline">Sign up</a>
+    Don't have an account? <a href="{% url 'signup' %}" class="underline">Sign up</a>
   </p>
 </div>
 
   <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
-      <div class="login-input-fields">
-      {{ form.username }}
-      {{ form.password }}
+      <div class="login-input-wrapper">
+        {{ form.username|attr:"placeholder:Username"|add_class:"bg-transparent border-x-0 border-t-0 mb-2.5 border-[#053f0c] focus:ring-0" }}
+        {{ form.password|attr:"placeholder:Enter Password"|add_class:"bg-transparent border-x-0 border-t-0 mb-2.5 border-[#053f0c] focus:ring-0" }}
       </div>
 
       <div class="button"> 

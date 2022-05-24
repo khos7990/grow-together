@@ -1,25 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="match-card">
+    
+    <div class="image" style="background-image: url('{{ photo.url }}');" >
+
+    {% for p in plant %}
+
+        <span> {{ p.scientific_name }} </span>
+    </div>
+    <div class="plant-details">
+        <h3>Care & Conditions</h3>
+        <p>Common Name: {{ p.common_name }}</p>
+        <p>Light: {{ p.light }}</p>
+        <p>Water: {{ p.water_use }}</p>
+        <p>Maintenance: {{ p.maintenance }}</p>
+
+    </div>
+    <div class="button">
+        <a href="#">
+            <span> Start Matching </span>
+        </a>
+    </div>
+</div>
+
+    {% endfor %}
 
 
-{% for photo in user.photo_set.all %}
+{% endblock %}
+
+
+
+
+<!-- {% for photo in user.photo_set.all %}
 <img src="{{photo.url}}">
 <h1> BestMatch: </h1> <h1>{{result.bestMatch}} </h1>
 {% empty %}
 <div><h1>No Photos Uploaded</h1></div>
-{% endfor %}
-
-<form action="{% url 'upload' user.id %}" enctype="multipart/form-data" method="POST">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <br><br>
-    <input type="submit" class="btn" value="Upload Photo">
-</form>
-
-
-
-{% for p in plant %}
-Scientific Name:<h2>{{p.scientific_name}} </h2>
-Common Name:<h2>{{p.common_name}}</h2>
-Water Use: <h2>{{p.water_use}}</h2>
-Light: <h2>{{p.light}}</h2>
-Maintenance: <h2>{{p.maintenance}}</h2>
-<h2>{% endfor %}</h2>
+{% endfor %} -->
