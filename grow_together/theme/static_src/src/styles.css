@@ -244,3 +244,67 @@ nav .logo {
   height: 150px;
   margin: 20px 20px 20px 20px;
 }
+
+.matches {
+  width: 335px;
+  height: 33px;
+  flex-grow: 0;
+  margin: 20px 21px 7px 19px;
+  font-family: OpenSans;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color:#053f0c
+}
+
+
+.background-rectangle {
+  width: 315px;
+  height: 438px;
+  margin: 29px 30px 164px;
+  padding: 20px 18px 20px 19px;
+  border-radius: 5px;
+  background-color: #e9f0e8;
+}
+
+.X-plant-matches {
+  color: #053f0c;
+  text-align: center;
+  padding-bottom: 10px;
+  
+}
+
+.Ellipse-2 {
+  width: 70px;
+  height: 70px;
+  flex-grow: 0;
+  margin: -62px 0px 0px -35px;
+  border: solid 2px #898989;
+  background-color: #b8d8bb;
+  border-radius: 50px;
+}
+
+
+.Rectangle-60 {
+  width: 277px;
+  height: 106px;
+  margin: 0 1px 10px 0;
+  padding: 14px 14px 13px 15px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #9ed5bb;
+}
+
+.Rectangle-44 {
+  width: 46px;
+  height: 46px;
+  flex-grow: 0;
+  margin: 14px 14px 15px 0;
+  border-radius: 37px;
+  background-color: #9ed5bb;
+}
+

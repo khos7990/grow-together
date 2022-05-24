@@ -27,6 +27,9 @@ def home(request):
 def match(request):
     return render(request, 'match.html')
 
+def matches(request):
+    return render(request, 'matches.html')
+
 def signup (request):
     error_message = ''
     if request.method == 'POST':
