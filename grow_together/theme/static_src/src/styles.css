@@ -84,8 +84,17 @@ nav .logo {
 }
 
 .nav-item {
-  margin: 10px 20px 0;
+  margin: 10px 0 0 20px;
 }
+
+/* .icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("/../../static/img/logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
 
 .secondary-title {
   margin: 10px 0 0 20px;
