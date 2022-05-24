@@ -19,7 +19,7 @@
         <form action="{% url 'upload' user.id %}" enctype="multipart/form-data" method="POST">
             {% csrf_token %}
             <div class="inputs">
-                <input class="form-field" type="file" name="photo-file" multiple capture="environment">
+                <input class="form-field" type="file" name="photo-file" capture="environment">
             </div>
         </div>
         <div class="button"> 

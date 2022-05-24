@@ -8,11 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CSS and Custom CSS -->
     {% tailwind_css %}
-    <!-- Tailwind Flowbite -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://unpkg.com/flowbite@1.4.6/dist/flowbite.min.css"
-    /> -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,6 +56,7 @@
           <span class="dot"></span>
         </div>
         <h1 class="main-title"> Grow Together </h1>
+        <div class="logo"></div>
       </div>
     </nav>
 
@@ -86,19 +82,6 @@
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
-
-    // add placeholder text to login page form fields
-    if (document.querySelector(".login-input-fields")) {
-      document.getElementById("id_username").setAttribute("placeholder", "Username"); 
-      document.getElementById("id_password").setAttribute("placeholder", "Password");
-    }
-    
-    // add placeholder text to sign up page form fields
-    if (document.querySelector(".signup-input-fields")){
-      document.getElementById("id_username").setAttribute("placeholder", "Username"); 
-      document.getElementById("id_password1").setAttribute("placeholder", "Enter Password"); 
-      document.getElementById("id_password2").setAttribute("placeholder", "Confirm Password"); 
-    }
     </script>
   </body>
 </html>

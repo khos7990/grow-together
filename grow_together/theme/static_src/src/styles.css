@@ -48,11 +48,24 @@ nav .dot {
 }
 
 nav .main-title {
+  /* fix flexbox thing */
   position: absolute;
-  left: 50%;
+  left: 48%;
   transform: translate(-50%, 0);
   font-size: 20px;
   color: var(--medium-dark-green);
+}
+
+nav .logo {
+  height: 20px;
+  width: 20px;
+  /* fix flexbox - do not like absolute */
+  position: absolute;
+  left: 67%;
+  background-image: url("/../../static/img/logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .nav-menu {
@@ -109,37 +122,23 @@ nav .main-title {
   letter-spacing: 0.45px;
 }
 
-.login-input-fields {
+.login-input-wrapper {
   margin: 60px 20px 0 20px;
   display: flex;
   flex-direction: column;
 }
-
-.login-input-fields > input {
-  margin: 0 0 10px 0;
-  background: transparent;
-  border: none;
-  border-bottom: solid 1px black;
-}
-
 
 /* Sign Up Page */
 
-.signup-input-fields {
-  margin: 60px 20px 0 20px;
+.signup-input-wrapper {
+  margin: 140px 20px 0 20px;
   display: flex;
   flex-direction: column;
 }
 
-.signup-input-fields > input {
-  margin: 0 0 10px 0;
-  background: transparent;
-  border: none;
-  border-bottom: solid 1px black;
-}
-
-.signup-input-fields > input:focus {
-  border:thick;
+.signup-instructions {
+  margin: 30px 20px 0 20px;
+  font-size: 14px;
 }
 
 /* Home Page */
@@ -220,11 +219,11 @@ nav .main-title {
   /* background-image: linear-gradient(
       to bottom,
       #fff0 0%,
-      #fff0 41%,
-      #0000007d 79%,
+      #fff0 50%,
+      #0000007d 85%,
       #000 100%
-    )
-    url("/../../static/img/IMG_0505.jpeg"); */
+    ),
+    url("/../../static/img/IMG_0493.jpeg"); */
 }
 
 .match-card > .image > span {

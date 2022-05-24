@@ -7,19 +7,13 @@ from .models import Plant, Photo
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm, forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 import uuid
 import boto3
 import urllib.parse
 from pprint import pprint
 import json
-
-# class UserCreationForm(forms.ModelForm):
-#     def __init__(self, *args, **kwargs):
-#         super(UserCreationForm, self).__init__(*args, **kwargs)
-#         self.fields['username'].label = ""
-#         self.fields['password'].label = ""
-
 
 # testing amazon s3
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
@@ -84,10 +78,12 @@ def upload(request, user_id):
                 match = data['bestMatch']
                 first_word = match.split()[:1]
                 p = Plant.objects.all().filter(scientific_name__contains=first_word[0])
-                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p})
+                user = User.objects.all().filter(id = user_id)
+                Uploadedphoto = user[0].photo_set.last()
+                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p, 'photo': Uploadedphoto})
             except:
                 print('An error occurred uploading file to S3')
-    return render(request, 'uploadaws.html', {user_id: user_id})
+    return render(request, 'Ishan.html', {user_id: user_id})
 
 
 
