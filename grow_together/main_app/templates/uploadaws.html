@@ -5,19 +5,17 @@
 
 <div class="match-card">
     
-    <div class="image" style="background-image: url('{{ photo.url }}');" >
-  
+    <div class="image" style="background-image: url('{{ photo }}');" >
 
-    {% for p in plant %}
 
-        <span> {{ p.scientific_name }} </span>
+        <span> {{ plant.scientific_name }} </span>
     </div>
     <div class="plant-details">
         <h3>Care & Conditions</h3>
-        <p>Common Name: {{ p.common_name }}</p>
-        <p>Light: {{ p.light }}</p>
-        <p>Water: {{ p.water_use }}</p>
-        <p>Maintenance: {{ p.maintenance }}</p>
+        <p>Common Name: {{ plant.common_name }}</p>
+        <p>Light: {{ plant.light }}</p>
+        <p>Water: {{ plant.water_use }}</p>
+        <p>Maintenance: {{ plant.maintenance }}</p>
 
     </div>
     <div class="button">
@@ -26,18 +24,26 @@
         </a>
     </div>
 </div>
+<h2>Matches</h2>
+{% for match in matches %}
+{{match.scientific_name}}
+<img src="{{match.image}}">
+<h3>Care & Conditions</h3>
+<p>Common Name: {{ match.common_name }}</p>
+<p>Light: {{ match.light }}</p>
+<p>Water: {{ match.water_use }}</p>
+<p>Maintenance: {{ match.maintenance }}</p>
 
-    {% endfor %}
+<form method="post" action="{% url 'matchedplant' user.id %}">
+    {% csrf_token %}
+    <input type="hidden" name="url" value="{{ photo }}">
+    <input type="hidden" name="matched_plant" value="{{ match.id }}">
+    <input type="hidden" name="user_plant" value="{{plant.id}}">
 
+<button>Match</button>
+      
+</form>
+{% endfor %}
 
 {% endblock %}
 
-
-
-
-<!-- {% for photo in user.photo_set.all %}
-<img src="{{photo.url}}">
-<h1> BestMatch: </h1> <h1>{{result.bestMatch}} </h1>
-{% empty %}
-<div><h1>No Photos Uploaded</h1></div>
-{% endfor %} -->

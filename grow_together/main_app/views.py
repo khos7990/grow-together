@@ -3,7 +3,7 @@ from urllib import response
 import django
 from django import forms
 import requests
-from .models import Plant, Photo, UserPlant
+from .models import Plant, UserPlant
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth import login
@@ -27,8 +27,6 @@ def home(request):
 def match(request):
     return render(request, 'match.html')
 
-def matches(request):
-    return render(request, 'matches.html')
 
 def signup (request):
     error_message = ''
@@ -79,27 +77,37 @@ def upload(request, user_id):
                 match = data['bestMatch']
                 first_word = match.split()[:1]
                 p = Plant.objects.all().filter(scientific_name__contains=first_word[0])
-                photo = Photo(url=url, user_id=user_id, plant= p[0])
-                photo.save()
-                user = User.objects.all().filter(id = user_id)
-                Uploadedphoto = user[0].photo_set.last()
-                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p, 'photo': Uploadedphoto})
-            except:
+                matches = Plant.objects.all().filter(light=p[0].light).exclude(scientific_name__contains=p[0])
+                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p.first(), 'matches': matches, 'photo': url})
+            except Exception as e:
+                print(e)
                 print('An error occurred uploading file to S3')
-    return render(request, 'uploadaws.html')# {user_id: user_id})
+    return render(request, 'uploadaws.html')
 
 
 def myplants(request, user_id):
-    user = User.objects.all().filter(id = user_id)
-    photos = user[0].photo_set.all()
+    user = User.objects.get(id = user_id)
+    photos = user.photo_set.all()
     
-    return render(request, 'myplants.html') #{user_id: user_id, 'photos':photos})
+    return render(request, 'myplants.html', {'profile': user, 'photos': photos}) 
+
+
+def matchedplant(request, user_id):
+    if request.method == 'POST':
+        form = (request.POST)
+        user = User.objects.get(id = user_id)
+        plant = Plant.objects.get(id=form['matched_plant'])
+        userplant = Plant.objects.get(id=form['user_plant'])
+        usermatch = UserPlant(url=form['url'], user=user, matched_plant= plant, user_plant=userplant)
+        usermatch.save()
+        return render(request, 'myplants.html', {'user': user }) 
+
+
+
+
 
 
     
-    
-
-
 
 
 
