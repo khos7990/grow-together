@@ -4,7 +4,7 @@
 {% block main %}
 
 
-
+{% if user.is_authenticated %}
 <p class="sub-title">My Plants</p>
 
 {% for match in user.userplant_set.all %}
@@ -72,6 +72,8 @@
   </div>
   
   {% endfor %}
+  {% endif %}
+
 
   <!-- <div class="slider">
     <div class="slides">

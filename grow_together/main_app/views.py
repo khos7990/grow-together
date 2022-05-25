@@ -9,6 +9,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 import uuid
 import boto3
 import urllib.parse
@@ -35,7 +36,7 @@ def signup (request):
         if form.is_valid():
             user = form.save()
             login(request,user)
-            return redirect('registration/test.html')
+            return redirect('home')
         else:
             error_message = 'Unable to complete sign up - Please Try Again'
     form = UserCreationForm
@@ -84,7 +85,7 @@ def upload(request, user_id):
                 print('An error occurred uploading file to S3')
     return render(request, 'uploadaws.html')
 
-
+@login_required
 def myplants(request, user_id):
     matchedplant = []
     user = User.objects.get(id = user_id)
