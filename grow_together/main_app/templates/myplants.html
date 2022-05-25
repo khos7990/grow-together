@@ -3,24 +3,148 @@
 
 {% block main %}
 
-{% if matched %}
+
+
+<p class="sub-title">My Plants</p>
 
 {% for match in user.userplant_set.all %}
-User Plant: {{match.user_plant}}
-<img src ="{{match.url}}">
-Matched Plant: {{match.matched_plant}}
-{% endfor %}
-{% for m in matched %}
-<img src="{{m.image}}">
-{% endfor %}
+  <div class="myplants-main-card">
+    <div class="top-sub-card">
+      <div class="top-sub-card-photo" style="background-image: url('{{match.url}}')"></div>
+
+      <div class="info-wrapper">
+        <div class="logo-wrapper">
+          <div class="logo-water"></div>
+        </div>
+        <h4>Water</h4>
+        <p>{{ match.user_plant.water_use }}</p>
+      </div>
+
+      <div class="info-wrapper">
+        <div class="logo-wrapper">
+          <div class="logo-sun"></div>
+        </div>
+        <h4>Sunlight</h4>
+        <p>{{ match.user_plant.light }}</p>
+      </div>
+
+      <div class="delete">
+       <a href="#">
+         <div class="delete-logo">
+          <input type="submit" value="">
+        </div>
+       </a>
+
+      </div>
+    </div>
+    <hr>
+    <p class="plant-name">{{ match.user_plant.scientific_name }}</p>
+  </div>
+
+  <div class="myplants-main-card">
+    <div class="top-sub-card">
+      <div class="top-sub-card-photo" style="background-image: url('{{match.matched_plant.image}}')"></div>
+
+      <div class="info-wrapper">
+        <div class="logo-wrapper">
+          <div class="logo-water"></div>
+        </div>
+        <h4>Water</h4>
+        <p>{{ match.matched_plant.water_use }}</p>
+      </div>
+
+      <div class="info-wrapper">
+        <div class="logo-wrapper">
+          <div class="logo-sun"></div>
+        </div>
+        <h4>Sunlight</h4>
+        <p>{{ match.matched_plant.light }}</p>
+      </div>
+
+      <div class="delete">
+       <a href="#">
+         <div class="delete-logo">
+          <input type="submit" value="">
+        </div>
+       </a>
+
+      </div>
+    </div>
+    <hr>
+    <p class="plant-name">{{ match.matched_plant.common_name }}</p>
+  </div>
+  
+  {% endfor %}
+
+  <!-- <div class="slider">
+    <div class="slides">
+      <div class="myplants-main-card">
+        <div class="top-sub-card">
+          <div class="top-sub-card-photo" style="background-color: lightsalmon;"></div>
+    
+          <div class="info-wrapper">
+            <div class="logo-wrapper">
+              <div class="logo-water"></div>
+            </div>
+            <h4>Water</h4>
+            <p>info</p>
+          </div>
+    
+          <div class="info-wrapper">
+            <div class="logo-wrapper">
+              <div class="logo-sun"></div>
+            </div>
+            <h4>Sunlight</h4>
+            <p>info</p>
+          </div>
+    
+          <div class="delete">
+           <a href="#">
+             <div class="delete-logo">
+              <input type="submit" value="">
+            </div>
+           </a>
+    
+          </div>
+        </div>
+        <hr>
+        <p class="plant-name">Monstera Deliciosa</p>
+      </div>
+      <div class="myplants-main-card">
+        <div class="top-sub-card">
+          <div class="top-sub-card-photo" style="background-color: lightsalmon;"></div>
+    
+          <div class="info-wrapper">
+            <div class="logo-wrapper">
+              <div class="logo-water"></div>
+            </div>
+            <h4>Water</h4>
+            <p>info</p>
+          </div>
+    
+          <div class="info-wrapper">
+            <div class="logo-wrapper">
+              <div class="logo-sun"></div>
+            </div>
+            <h4>Sunlight</h4>
+            <p>info</p>
+          </div>
+    
+          <div class="delete">
+           <a href="#">
+             <div class="delete-logo">
+              <input type="submit" value="">
+            </div>
+           </a>
+    
+          </div>
+        </div>
+        <hr>
+        <p class="plant-name">Monstera Deliciosa</p>
+      </div>
+    </div>
+  </div> -->
 
 
-{% else %}
-
-<h1> No Plants </h1>
-
-
-
-{% endif %}
 
 {% endblock %}
