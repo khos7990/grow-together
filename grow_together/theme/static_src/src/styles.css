@@ -245,66 +245,89 @@ nav .logo {
   margin: 20px 20px 20px 20px;
 }
 
-.matches {
-  width: 335px;
-  height: 33px;
-  flex-grow: 0;
-  margin: 20px 21px 7px 19px;
-  font-family: OpenSans;
-  font-size: 24px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color:#053f0c
-}
+/* User DB Page */
 
-
-.background-rectangle {
-  width: 315px;
-  height: 438px;
-  margin: 29px 30px 164px;
-  padding: 20px 18px 20px 19px;
+.matches-card {
+  height: 350px;
+  margin: 10px 20px 10px 20px;
   border-radius: 5px;
-  background-color: #e9f0e8;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.X-plant-matches {
-  color: #053f0c;
-  text-align: center;
-  padding-bottom: 10px;
-  
+.matches-sub-card1 {
+  height: 160px;
+  margin: 10px 10px 0 10px;
+  border-radius: 5px;
+  background-color: var(--light-green);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
 }
 
-.Ellipse-2 {
-  width: 70px;
-  height: 70px;
-  flex-grow: 0;
-  margin: -62px 0px 0px -35px;
-  border: solid 2px #898989;
-  background-color: #b8d8bb;
-  border-radius: 50px;
+.matches-sub-card {
+  height: 140px;
+  /* margin: 20px 20px 20px 0; */
+  border-radius: 5px;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
 }
 
-
-.Rectangle-60 {
-  width: 277px;
-  height: 106px;
-  margin: 0 1px 10px 0;
-  padding: 14px 14px 13px 15px;
-  border-radius: 20px;
-  background-color: #fff;
-  color: #9ed5bb;
+.sub-card-photo {
+  width: 100px;
+  height: 100px;
+  margin: 10px 40px 10px 10px;
+  border-radius: 5px;
+  background-image: url("/../../static/img/IMG_0493.jpeg");
+  background-position: center;
+  background-size: cover;
 }
 
-.Rectangle-44 {
-  width: 46px;
-  height: 46px;
-  flex-grow: 0;
-  margin: 14px 14px 15px 0;
-  border-radius: 37px;
-  background-color: #9ed5bb;
+.super-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* background-color: lightblue; */
+  margin: 10px 0 10px 10px;
 }
 
+.super-wrapper > p {
+  justify-self: center;
+  align-self: center;
+  margin: 0 20px 0 0;
+}
+
+.logo-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-card-logo-water {
+  width: 15px;
+  height: 15px;
+  background-image: url("/../../static/img/water-drop-svgrepo-com.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.sub-card-logo-sun {
+  width: 25px;
+  height: 25px;
+  background-image: url("/../../static/img/icons8-sun.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Text-subcard {
+  margin: 10px 20px 0 10px;
+  /* background-color: darkturquoise; */
+  margin-bottom: 20px;
+}
