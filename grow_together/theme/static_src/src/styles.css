@@ -209,7 +209,7 @@ nav .logo {
   text-decoration: underline;
 } */
 
-/* Match Template */
+/* My Plants Template */
 
 .match-card {
   height: 560px;
@@ -245,20 +245,11 @@ nav .logo {
   margin: 20px 20px 20px 20px;
 }
 
-/* User DB Page */
+/* My Plants Page */
 
-.matches-card {
-  height: 350px;
-  margin: 10px 20px 10px 20px;
-  border-radius: 5px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-}
-
-.matches-sub-card1 {
+.myplants-main-card {
   height: 160px;
-  margin: 10px 10px 0 10px;
+  margin: 10px 20px 10px 20px;
   border-radius: 5px;
   background-color: var(--light-green);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -266,37 +257,35 @@ nav .logo {
   flex-direction: column;
 }
 
-.matches-sub-card {
+.top-sub-card {
   height: 140px;
-  /* margin: 20px 20px 20px 0; */
-  border-radius: 5px;
-  /* background-color: pink; */
+  margin: 10px 10px 10px 10px;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-evenly; */
 }
 
-.sub-card-photo {
+.top-sub-card-photo {
   width: 100px;
   height: 100px;
-  margin: 10px 40px 10px 10px;
+  /* margin: 10px 40px 10px 10px; */
   border-radius: 5px;
-  background-image: url("/../../static/img/IMG_0493.jpeg");
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  /* background-image: url("/../../static/img/IMG_0493.jpeg"); */
   background-position: center;
   background-size: cover;
 }
 
-.super-wrapper {
+.info-wrapper {
   display: flex;
   flex-direction: column;
-  /* background-color: lightblue; */
-  margin: 10px 0 10px 10px;
+  background-color: lightblue;
+  margin: 0 auto;
 }
 
-.super-wrapper > p {
+.info-wrapper > p {
   justify-self: center;
   align-self: center;
-  margin: 0 20px 0 0;
+  /* margin: 0 20px 0 0; */
 }
 
 .logo-wrapper {
@@ -308,7 +297,7 @@ nav .logo {
   align-items: center;
 }
 
-.sub-card-logo-water {
+.logo-water {
   width: 15px;
   height: 15px;
   background-image: url("/../../static/img/water-drop-svgrepo-com.svg");
@@ -326,8 +315,18 @@ nav .logo {
   background-repeat: no-repeat;
 }
 
-.Text-subcard {
-  margin: 10px 20px 0 10px;
-  /* background-color: darkturquoise; */
-  margin-bottom: 20px;
+.delete {
+  justify-content: flex-end;
+}
+
+.delete-logo {
+  height: 12px;
+  width: 12px;
+  background-image: url('/../../static/img/delete_x.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+.plant-name {
+  margin: 10px 20px 10px 10px;
 }

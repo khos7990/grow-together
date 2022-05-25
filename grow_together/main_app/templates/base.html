@@ -90,14 +90,15 @@
       }
 
       // home page input['type=file'] change to icon
-
-      let inputPhoto = document.getElementById("input_photo");
-      let imageName = document.getElementById("image_name")
-
-        inputPhoto.addEventListener("change", () => {
-            let inputImage = document.querySelector("input[type=file]").files[0];
-            imageName.innerText = inputImage.name;
-        })
+      if (document.getElementById("input_photo")) {
+        let inputPhoto = document.getElementById("input_photo");
+        let imageName = document.getElementById("image_name")
+  
+          inputPhoto.addEventListener("change", () => {
+              let inputImage = document.querySelector("input[type=file]").files[0];
+              imageName.innerText = inputImage.name;
+          }) 
+      }
       </script>
   </body>
   </html>

@@ -27,6 +27,9 @@ def home(request):
 def match(request):
     return render(request, 'match.html')
 
+def temp(request):
+    return render(request, 'temp.html')
+
 
 def signup (request):
     error_message = ''
