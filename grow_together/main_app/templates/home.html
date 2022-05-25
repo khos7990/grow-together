@@ -18,9 +18,16 @@
         {% if user.is_authenticated %}
         <form action="{% url 'upload' user.id %}" enctype="multipart/form-data" method="POST">
             {% csrf_token %}
-            <div class="inputs">
-                <input class="form-field" type="file" name="photo-file" capture="environment">
-            </div>
+            
+                <div class="text-center">
+                    <label for="input_photo">
+                      <i class="fa fa-2x fa-camera"></i>
+                      <input class="hidden" type="file" name="photo-file" id="input_photo"/>
+                      <br/>
+                      <span class="text-[#67a16e]" id="image_name"></span>
+                    </label>
+                </div>
+
         </div>
         <div class="button"> 
             <input type="submit" value="Upload Image">

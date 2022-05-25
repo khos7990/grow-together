@@ -6,6 +6,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
     <!-- Tailwind CSS and Custom CSS -->
     {% tailwind_css %}
     <!-- Fonts -->
@@ -14,8 +16,9 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
       rel="stylesheet"
-    />
-
+      />
+    <!-- Camera Icon Home Page -->
+    <script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
     <title>Grow Together</title>
   </head>
   <body>
@@ -64,8 +67,9 @@
     
     <main>{% block main %} {% endblock %}</main>
     
-    <!-- JS script for Burger Menu -->
     <script>
+      // JS script for Burger Menu
+
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
       
@@ -84,6 +88,16 @@
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
+
+      // home page input['type=file'] change to icon
+
+      let inputPhoto = document.getElementById("input_photo");
+      let imageName = document.getElementById("image_name")
+
+        inputPhoto.addEventListener("change", () => {
+            let inputImage = document.querySelector("input[type=file]").files[0];
+            imageName.innerText = inputImage.name;
+        })
       </script>
   </body>
   </html>
