@@ -27,9 +27,6 @@ def home(request):
 def match(request):
     return render(request, 'match.html')
 
-def temp(request):
-    return render(request, 'temp.html')
-
 
 def signup (request):
     error_message = ''
@@ -102,6 +99,7 @@ def myplants(request, user_id):
             # return render(request, 'myplants.html', {'user':user, 'matched': matchedplant}) 
     print(matchedplant)
     return render(request, 'myplants.html', {'user':user, 'matched': matchedplant})         
+    # return render(request, 'temp.html', {'user':user, 'matched': matchedplant})         
 
 
 
@@ -114,6 +112,7 @@ def matchedplant(request, user_id):
         usermatch = UserPlant(url=form['url'], user=user, matched_plant= plant, user_plant=userplant)
         usermatch.save()
         return redirect('myplants', user_id = user_id) 
+    
 
 
 
