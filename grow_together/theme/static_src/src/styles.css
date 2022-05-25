@@ -262,12 +262,12 @@ nav .logo {
   margin: 10px 10px 10px 10px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .top-sub-card-photo {
   width: 100px;
   height: 100px;
-  /* margin: 10px 40px 10px 10px; */
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   /* background-image: url("/../../static/img/IMG_0493.jpeg"); */
@@ -278,14 +278,17 @@ nav .logo {
 .info-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: lightblue;
-  margin: 0 auto;
+  align-items: center;
+}
+
+.info-wrapper > h4 {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .info-wrapper > p {
-  justify-self: center;
-  align-self: center;
-  /* margin: 0 20px 0 0; */
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .logo-wrapper {
@@ -306,7 +309,7 @@ nav .logo {
   background-repeat: no-repeat;
 }
 
-.sub-card-logo-sun {
+.logo-sun {
   width: 25px;
   height: 25px;
   background-image: url("/../../static/img/icons8-sun.svg");
@@ -329,4 +332,5 @@ nav .logo {
 
 .plant-name {
   margin: 10px 20px 10px 10px;
+  font-weight: bold;
 }
