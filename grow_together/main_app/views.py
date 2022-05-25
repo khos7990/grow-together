@@ -97,7 +97,6 @@ def myplants(request, user_id):
         # for match in user.userplant_set.all():
         #     print(match.matched_plant)
             # return render(request, 'myplants.html', {'user':user, 'matched': matchedplant}) 
-    print(matchedplant)
     return render(request, 'myplants.html', {'user':user, 'matched': matchedplant})         
     # return render(request, 'temp.html', {'user':user, 'matched': matchedplant})         
 
@@ -112,6 +111,17 @@ def matchedplant(request, user_id):
         usermatch = UserPlant(url=form['url'], user=user, matched_plant= plant, user_plant=userplant)
         usermatch.save()
         return redirect('myplants', user_id = user_id) 
+
+def deletematch(request, user_id):
+    user = User.objects.get(id = user_id)
+    if request.method == 'POST':
+        for match in user.userplant_set.all():
+            matchid = (match.id)
+            print(matchid)
+            deletematch= UserPlant.objects.get(id=matchid).delete()
+            print(deletematch)
+            return redirect('myplants', user_id = user_id) 
+
     
 
 
