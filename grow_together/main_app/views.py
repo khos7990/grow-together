@@ -87,9 +87,11 @@ def upload(request, user_id):
 
 def myplants(request, user_id):
     user = User.objects.get(id = user_id)
-    photos = user.photo_set.all()
+    for match in user.userplant_set.all():
+        matchedplant = Plant.objects.get(scientific_name=match.matched_plant)
+
     
-    return render(request, 'myplants.html', {'profile': user, 'photos': photos}) 
+    return render(request, 'myplants.html', {'user':user, 'matched': matchedplant}) 
 
 
 def matchedplant(request, user_id):
@@ -100,7 +102,7 @@ def matchedplant(request, user_id):
         userplant = Plant.objects.get(id=form['user_plant'])
         usermatch = UserPlant(url=form['url'], user=user, matched_plant= plant, user_plant=userplant)
         usermatch.save()
-        return render(request, 'myplants.html', {'user': user }) 
+        return redirect('myplants', user_id = user_id) 
 
 
 
