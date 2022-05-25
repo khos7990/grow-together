@@ -86,12 +86,20 @@ def upload(request, user_id):
 
 
 def myplants(request, user_id):
+    matchedplant = []
     user = User.objects.get(id = user_id)
-    for match in user.userplant_set.all():
-        matchedplant = Plant.objects.get(scientific_name=match.matched_plant)
+    if user.userplant_set.all():
+        for match in user.userplant_set.all():
+            matchedplant.append(Plant.objects.get(scientific_name=match.matched_plant))
 
-    
-    return render(request, 'myplants.html', {'user':user, 'matched': matchedplant}) 
+
+        # matchedplant = []
+        # for match in user.userplant_set.all():
+        #     print(match.matched_plant)
+            # return render(request, 'myplants.html', {'user':user, 'matched': matchedplant}) 
+    print(matchedplant)
+    return render(request, 'myplants.html', {'user':user, 'matched': matchedplant})         
+
 
 
 def matchedplant(request, user_id):

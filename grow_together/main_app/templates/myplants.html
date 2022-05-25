@@ -3,12 +3,24 @@
 
 {% block main %}
 
+{% if matched %}
+
 {% for match in user.userplant_set.all %}
 User Plant: {{match.user_plant}}
 <img src ="{{match.url}}">
 Matched Plant: {{match.matched_plant}}
-<img src= "{{matched.image}}">
+{% endfor %}
+{% for m in matched %}
+<img src="{{m.image}}">
 {% endfor %}
 
+
+{% else %}
+
+<h1> No Plants </h1>
+
+
+
+{% endif %}
 
 {% endblock %}
