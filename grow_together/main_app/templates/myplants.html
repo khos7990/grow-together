@@ -62,13 +62,15 @@
       </div>
 
       <div class="delete">
-       <a href="#">
-         <div class="delete-logo">
-          <input type="submit" value="">
-        </div>
-       </a>
+      
+        
+            <form action="{% url 'deletematch' user.id %}" method="POST">
+            {% csrf_token %}
+            <button class="delete-logo" type="submit"></button>
+          </form>
+          </div>
 
-      </div>
+
     </div>
     <hr>
     <p class="plant-name">{{ match.matched_plant.common_name }}</p>

@@ -10,4 +10,5 @@ urlpatterns = [
     path('match/<int:user_id>/', views.upload, name='upload'),
     path('myplants/<int:user_id>/', views.myplants, name='myplants'),
     path('matchedplants/<int:user_id>/', views.matchedplant, name='matchedplant'),
+    path('myplants/<int:user_id>/delete', views.deletematch, name='deletematch')
 ]
