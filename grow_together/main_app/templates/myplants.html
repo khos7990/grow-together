@@ -3,17 +3,12 @@
 
 {% block main %}
 
-<!-- {% for p in photos %}
-<h2>{{p.plant}}</h2>
-<img src="{{p.url}}"> -->
-
-
+{% for match in user.userplant_set.all %}
+User Plant: {{match.user_plant}}
+<img src ="{{match.url}}">
+Matched Plant: {{match.matched_plant}}
+<img src= "{{matched.image}}">
 {% endfor %}
-
-
-
-
-
 
 
 {% endblock %}
