@@ -1,6 +1,6 @@
 
 
-<div class="Match-Card">
+<!-- <div class="Match-Card">
   <div class="Match-Card-Image">
     <span> Purple Heart </span>
   </div>
@@ -8,6 +8,46 @@
   <div class="Match-Card-Button">
     <span> Start Matching </span>
   </div>
+</div> -->
+
+{% extends 'base.html' %} {% load static %} {% block main %}
+
+<div class="match-card">
+  <div
+    class="image"
+    style="background-image: url(/../../static/img/IMG_0493.jpeg)">
+    <span> </span>
+  </div>
+  <div class="plant-details">
+    Your plant
+    <h3>Care & Conditions:</h3>
+    <p>Common Name:</p>
+    <p>Light:</p>
+    <p>Water:</p>
+    <p>Maintenance:</p>
+  </div>
+  <hr>
+  <div>
+    <div class="new-plants">
+      <div class="options">
+        <img class="options" src="https://www.thespruce.com/thmb/zNsc1akGDsC9czH4a73ttEesb80=/2000x2000/smart/filters:no_upscale()/KaraRileyPothos-4-d35ac2fea76e40149e4d6c02f8b5dc81.jpg" alt="potho">
+      </div>
+      <div class="options">
+        <img class="options" src="https://images.monpanierdachat.com/1821/products/231498/img-1813-schefflera-aboricola-10-pouces-1-ccc75ca9-2da3-4856-a823-1029d347eac9.jpg?fit=max&w=1600&h=1000" alt="schefflera">
+      </div>
+      <div class="options">        
+        <img class="options" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzL_ZY33dgzAwqIwUyBNcZVgW3IczHl1uO6A&usqp=CAU" alt="philodendron"></div>
+    
+    </div>
+  </div>
+
+  <!-- <div class="Match-Card-Image">
+    <span> Purple Heart </span>
+  </div> -->
+  <!-- <div class="match-card-add-photo"></div> -->
+  <!-- <div class="Match-Card-Button">
+    <span> Start Matching </span>
+  </div> -->
 </div>
 
-
+{% endblock %}
