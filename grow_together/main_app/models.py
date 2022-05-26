@@ -1,4 +1,3 @@
-from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
 from psycopg2 import Timestamp
@@ -23,18 +22,7 @@ class UserPlant(models.Model):
    user_plant = models.ForeignKey(Plant, related_name="user_plant", on_delete=models.CASCADE, blank=True, default=None)
    matched_plant = models.ForeignKey(Plant, related_name="matched_plant", on_delete=models.CASCADE,  blank=True, default=None)
 
-#
-
    def __str__(self):
        return self.url
-
-
-# class Photo (models.Model):
-#     url = models.CharField(max_length=200)
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     plant = models.ForeignKey(Plant, on_delete=models.CASCADE, null=True )
-
-#     def __str__(self):
-#         return f"Photo for: {self.user_id} @{self.url}"
 
 

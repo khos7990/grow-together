@@ -38,9 +38,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'tailwind',
-    'theme',
     'main_app',
+    'theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_browser_reload',
+    'tailwind',
     'widget_tweaks'
 ]
 
@@ -94,7 +94,6 @@ WSGI_APPLICATION = 'grow_together.wsgi.application'
 
 DATABASES = {
     'default': {
-        # CHANGE ENGINE (POSTGRESQL) AND DB NAME
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'plants',
     }
