@@ -309,6 +309,16 @@ nav .logo {
   flex-direction: column;
 }
 
+.myplants-matched-card {
+  height: 160px;
+  margin: 10px 20px 40px 20px;
+  border-radius: 5px;
+  background-color: var(--light-green);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
 .top-sub-card {
   height: 140px;
   margin: 10px 10px 10px 10px;
