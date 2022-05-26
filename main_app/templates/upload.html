@@ -17,13 +17,29 @@
         <p>Water: {{ plant.water_use }}</p>
         <p>Maintenance: {{ plant.maintenance }}</p>
     </div>
-    <div class="button">
+    <!-- <div class="button">
         <a href="#">
             <span> Start Matching </span>
         </a>
-    </div>
+    </div> -->
 </div>
-<h2>Matches</h2>
+
+    
+  <div>
+    <div class="matching-plants">
+        {% for match in matches %}
+      <div class="match-wrapper">
+          <div class="match-photos" style="background-image: url('{{ match.image }}');"></div>
+          <p>Hello</p>
+      </div>       
+      {% endfor %}
+       
+    </div>
+  
+
+
+
+<!-- <h2>Matches</h2>
 {% for match in matches %}
 {{match.scientific_name}}
 <img src="{{match.image}}">
@@ -42,7 +58,7 @@
 <button>Match</button>
       
 </form>
-{% endfor %}
+{% endfor %} -->
 
 {% endblock %}
 
