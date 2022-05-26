@@ -1,43 +1,43 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block main %}
 
-{% block main %}
+<p class="sub-title">Matches</p>
 
 <div class="match-card">
-    
-    <div class="image" style="background-image: url('{{ photo }}');" >
-
-
-        <span> {{ plant.scientific_name }} </span>
-    </div>
-    <div class="plant-details">
-        <h3>Care & Conditions</h3>
-        <p>Common Name: {{ plant.common_name }}</p>
-        <p>Light: {{ plant.light }}</p>
-        <p>Water: {{ plant.water_use }}</p>
-        <p>Maintenance: {{ plant.maintenance }}</p>
-    </div>
-    <!-- <div class="button">
-        <a href="#">
-            <span> Start Matching </span>
-        </a>
-    </div> -->
+  <div class="image" style="background-image: url('{{ photo }}');">
+    <span> {{ plant.scientific_name }} </span>
+  </div>
+  <div class="plant-details">
+    <h3>Care & Conditions</h3>
+    <p>Common Name: {{ plant.common_name }}</p>
+    <p>Light: {{ plant.light }}</p>
+    <p>Water: {{ plant.water_use }}</p>
+    <p>Maintenance: {{ plant.maintenance }}</p>
+  </div>
 </div>
 
-    
-  <div>
-    <div class="matching-plants">
-        {% for match in matches %}
-      <div class="match-wrapper">
-          <div class="match-photos" style="background-image: url('{{ match.image }}');"></div>
-          <p class="text-center text-[12px]">{{match.common_name}}</p>
-      </div>       
-      {% endfor %}
-       
-    </div>
-  
+<!-- <p class="sub-title">Matching Plants</p> -->
 
+<div class="matching-plants">
+  {% for match in matched_plant %}
+  <div class="match-wrapper">
+    <div
+      class="match-photos"
+      style="background-image: url('{{ match.image }}');"
+    ></div>
+    <p class="text-center text-[12px] mt-[5px]">{{match.common_name}}</p>
+    <!-- <div class="heart-icon"> -->
 
+    <form method="post" action="{% url 'matchedplant' user.id %}">
+      {% csrf_token %}
+      <input type="hidden" name="url" value="{{ photo }}" />
+      <input type="hidden" name="matched_plant" value="{{ match.id }}" />
+      <input type="hidden" name="user_plant" value="{{plant.id}}" />
+      <button class="heart-icon"></button>
+    </form>
+    <!-- </div> -->
+  </div>
+  {% endfor %}
+</div>
 
 <!-- <h2>Matches</h2>
 {% for match in matches %}
@@ -61,4 +61,3 @@
 {% endfor %} -->
 
 {% endblock %}
-

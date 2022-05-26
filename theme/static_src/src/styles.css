@@ -91,7 +91,6 @@ nav .logo {
 .nav-item-icon {
   height: 20px;
   width: 20px;
-  /* background-image: url('/../../static/img/Camera_Icon.svg'); */
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -262,7 +261,7 @@ nav .logo {
 .matching-plants {
   font-size: 15px;
   background-color: var(--light-green);
-  height: 135px;
+  height: 160px;
   margin: 0px 20px 0 20px;
   display: flex;
   justify-content: space-evenly;
@@ -274,7 +273,6 @@ nav .logo {
 .match-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -285,6 +283,16 @@ nav .logo {
   border-radius: 50%;
   background-position: center;
   background-size: cover;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.heart-icon {
+  height: 20px;
+  width: 20px;
+  background-image: url('/../../static/img/heart-icon.svg');
+  background-position: center;
+  background-size: cover;
+  margin-top: 5px;
 }
 
 
@@ -297,7 +305,6 @@ nav .logo {
   border-radius: 5px;
   background-color: var(--light-green);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  color: --;
   display: flex;
   flex-direction: column;
 }
