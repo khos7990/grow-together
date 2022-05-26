@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django_browser_reload',
+    'django_browser_reload',
     'tailwind',
     'widget_tweaks'
 ]
@@ -58,7 +58,7 @@ INTERNAL_IPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -148,5 +148,5 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'
 # Connect phone to localhost
 # ALLOWED_HOSTS = ['192.168.1.2', 'localhost', '127.0.0.1']
 
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
