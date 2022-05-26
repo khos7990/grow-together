@@ -59,7 +59,8 @@ def upload(request, user_id):
                 first_word = match.split()[:1]
                 p = Plant.objects.all().filter(scientific_name__contains=first_word[0])
                 matches = Plant.objects.all().filter(light=p[0].light).exclude(scientific_name__contains=p[0])
-                return render(request, 'upload.html', {user_id: user_id, 'result': data, 'plant': p.first(), 'matches': matches, 'photo': url})
+                matched_plant = matches[:3]
+                return render(request, 'upload.html', {user_id: user_id, 'result': data, 'plant': p.first(), 'matched_plant': matched_plant, 'photo': url})
             except Exception as e:
                 print(e)
                 print('An error occurred uploading file to S3')
