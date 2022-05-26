@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -145,4 +145,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # Connect phone to localhost
-ALLOWED_HOSTS = ['192.168.1.2', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['192.168.1.2', 'localhost', '127.0.0.1']
+
+import django_heroku
+django_heroku.settings(locals())
