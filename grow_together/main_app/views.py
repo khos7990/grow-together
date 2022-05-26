@@ -3,7 +3,6 @@ from urllib import response
 import requests
 from .models import Plant, UserPlant
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -12,9 +11,8 @@ import uuid
 import boto3
 import urllib.parse
 from pprint import pprint
-import json
 
-# testing amazon s3
+# Amazon S3 base Link
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'grow-together'
 
@@ -61,11 +59,11 @@ def upload(request, user_id):
                 first_word = match.split()[:1]
                 p = Plant.objects.all().filter(scientific_name__contains=first_word[0])
                 matches = Plant.objects.all().filter(light=p[0].light).exclude(scientific_name__contains=p[0])
-                return render(request, 'uploadaws.html', {user_id: user_id, 'result': data, 'plant': p.first(), 'matches': matches, 'photo': url})
+                return render(request, 'upload_aws.html', {user_id: user_id, 'result': data, 'plant': p.first(), 'matches': matches, 'photo': url})
             except Exception as e:
                 print(e)
                 print('An error occurred uploading file to S3')
-    return render(request, 'uploadaws.html')
+    return render(request, 'upload_aws.html')
 
 @login_required
 def myplants(request, user_id):
