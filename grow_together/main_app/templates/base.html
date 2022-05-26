@@ -33,25 +33,41 @@
           
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Home
-              <!-- <img class="icon" src="../../theme/static/img/logo.svg" alt=""> -->
-            </a>
+            <div class="nav-item-icon" style="background-image: url('../../static/img/camera_icon.svg') ;"></div>
+            <div>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </div>
             </li>
             <li class="nav-item">
+              <div class="nav-item-icon" style="background-image: url('../../static/img/plant_icon.svg') ;"></div>
+            <div>
               <a class="nav-link" href="{% url 'myplants' user.id %}">My Plants</a>
+            </div>
             </li>
             <li class="nav-item">
+              <div class="nav-item-icon" style="background-image: url('../../static/img/user_icon.svg') ;"></div>
+            <div>
               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </div>
             </li>
             {% else %}
             <li class="nav-item">
+              <div class="nav-item-icon" style="background-image: url('../../static/img/camera_icon.svg') ;"></div>
+            <div>
               <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </div>
             </li>
             <li class="nav-item">
+              <div class="nav-item-icon" style="background-image: url('../../static/img/user_icon.svg') ;"></div>
+            <div>
               <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </div>
             </li>
             <li class="nav-item">
+              <div class="nav-item-icon" style="background-image: url('../../static/img/user_icon.svg') ;"></div>
+            <div>
               <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            </div>
             </li>
             {% endif %}
           </ul>

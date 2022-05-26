@@ -1,7 +1,5 @@
-import re
 from urllib import response
-import django
-from django import forms
+# import django
 import requests
 from .models import Plant, UserPlant
 from django.shortcuts import redirect, render
@@ -25,8 +23,8 @@ BUCKET = 'grow-together'
 def home(request):
     return render(request, 'home.html')
 
-def match(request):
-    return render(request, 'match.html')
+# def match(request):
+#     return render(request, 'match.html')
 
 
 def signup (request):
@@ -42,22 +40,6 @@ def signup (request):
     form = UserCreationForm
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
-
-
-def test(request, user_id):
-    if request.method == 'POST':
-        api_key = '2b10P60RFzvdu9lsD1dWCHuk6u'
-        organ_1 = 'organs=flower'
-        form =(request.POST['image'])
-        encoded = urllib.parse.quote_plus(form)
-        url = 'https://my-api.plantnet.org/v2/identify/all?api-key=' + api_key + '&images=' + encoded + '&' + organ_1
-        result = requests.get(url)
-        data = (result.json())
-        return render(request, 'api.html', {'result': data})
-    else:
-        return render(request,'api.html')
-
-    
 
 def upload(request, user_id):
     if request.method == 'POST':
@@ -93,16 +75,8 @@ def myplants(request, user_id):
         for match in user.userplant_set.all():
             matchedplant.append(Plant.objects.get(scientific_name=match.matched_plant))
 
-
-        # matchedplant = []
-        # for match in user.userplant_set.all():
-        #     print(match.matched_plant)
-            # return render(request, 'myplants.html', {'user':user, 'matched': matchedplant}) 
     return render(request, 'myplants.html', {'user':user, 'matched': matchedplant})         
-    # return render(request, 'temp.html', {'user':user, 'matched': matchedplant})         
-
-
-
+          
 def matchedplant(request, user_id):
     if request.method == 'POST':
         form = (request.POST)
