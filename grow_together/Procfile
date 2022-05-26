@@ -1,1 +1,1 @@
-web: gunicorn grow_together.wsgi.application
+web: gunicorn grow_together.wsgi
