@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 import uuid
 import boto3
 import urllib.parse
@@ -68,13 +69,14 @@ def upload(request, user_id):
 
 @login_required
 def myplants(request, user_id):
-    matchedplant = []
-    user = User.objects.get(id = user_id)
-    if user.userplant_set.all():
-        for match in user.userplant_set.all():
-            matchedplant.append(Plant.objects.get(scientific_name=match.matched_plant))
-
-    return render(request, 'myplants.html', {'user':user, 'matched': matchedplant})         
+    if user_id == request.user.id:
+        matchedplant = []
+        user = User.objects.get(id = user_id)
+        if user.userplant_set.all():
+            for match in user.userplant_set.all():
+                matchedplant.append(Plant.objects.get(scientific_name=match.matched_plant))
+            return render(request, 'myplants.html', {'user':user, 'matched': matchedplant})   
+    return HttpResponse('<h1> No Bueno </h1>')      
           
 def matchedplant(request, user_id):
     if request.method == 'POST':

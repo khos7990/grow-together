@@ -187,10 +187,10 @@ nav .logo {
       to bottom,
       #fff0 0%,
       #fff0 50%,
-      #0000007d 85%,
+      #0000007d 75%,
       #000 100%
     ),
-    url("/../../static/img/IMG_0493.jpeg");
+    url("/../../static/img/main_img.jpeg");
   background-size: cover;
   background-position: center;
 }
