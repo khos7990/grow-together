@@ -7,7 +7,7 @@
 <a href="https://imgur.com/VBYdv5M"><img src="https://i.imgur.com/VBYdv5M.png" title="source: imgur.com" /></a>
 
 <p>UX designers: Bianca Liu and Tyannika Lam</p>
-<p>Developers: Alex Lorde, Ishan Khosla, and Nayab Kara</p>
+<p>Developers: Alex Lord, Ishan Khosla, and Nayab Kara</p>
 
 
 
